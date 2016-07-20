@@ -22,6 +22,15 @@ class ArrayPullTest extends \PHPUnit_Framework_TestCase
         ];
     }
 
+    public function arrayPullTypeErrorProvider()
+    {
+        return [
+            [ null, ['hello','world','foo','bar'] ],
+            [ null,null ],
+            [ ['foo' => 'bar', 'fizz' => 'buzz', 'hello' => 'world' ], null ]
+        ];       
+    }
+
     /**
      * @dataProvider arrayPullDataProvider
      */
@@ -30,5 +39,15 @@ class ArrayPullTest extends \PHPUnit_Framework_TestCase
         $pulledArray = array_pull($origin,$keys);
         $this->assertTrue($expectedArray == $pulledArray);
         $this->assertTrue($origin == $manipulated);
+    }
+    
+    /**
+     * @dataProvider arrayPullTypeErrorProvider
+     */
+    public function testArrayPullNullOrigin($origin,$keys)
+    {
+        $this->setExpectedException(\TypeError::class);
+
+        $pulledArray = array_pull($origin,$keys);
     }
 }
