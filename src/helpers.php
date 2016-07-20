@@ -10,7 +10,7 @@ if( ! function_exists('array_pull') )
      * @param array $keys Array of keys to pull from original array.
      * @return array Array of key => value pulled from original array.
      */
-    function array_pull( &$origin, $keys )
+    function array_pull(array &$origin, $keys )
     {
         $pulledArray = [];
 
