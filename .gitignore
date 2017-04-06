@@ -30,3 +30,4 @@ composer.lock
 
 # OMG MAC OSX WHY?!
 .DS_Store
+/nbproject
