@@ -60,3 +60,16 @@ if( ! function_exists('str_random') )
         return substr(base64_encode($bytes),0,$length);
     }
 }
+
+if( ! function_exists('camel_to_underscore') )
+{
+    function camel_to_underscore(string $string)
+    {
+	if( empty($string) )
+	    return $string;
+	
+	$string[0] = strtolower($string[0]);
+	$func = create_function('$c', 'return "_" . strtolower($c[1]);');
+	return preg_replace_callback('/([A-Z])/', $func, $string);	
+    }
+}
