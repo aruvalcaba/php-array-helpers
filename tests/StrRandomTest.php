@@ -2,7 +2,10 @@
 
 namespace BlackLabel;
 
-class StrRandomTest extends \PHPUnit_Framework_TestCase
+/**
+ * @author Alan Ruvalcaba <aruval3@gmail.com>
+ */
+class StrRandomTest extends TestCase
 {
     function strRandomDataProviderSuccess()
     {
@@ -20,7 +23,6 @@ class StrRandomTest extends \PHPUnit_Framework_TestCase
         return [
             ['hello world'],
             [null],
-            [3.14],
             [[]],
             [new \stdClass]
         ];
@@ -39,11 +41,10 @@ class StrRandomTest extends \PHPUnit_Framework_TestCase
     
     /**
      * @dataProvider strRandomDataProviderFailure
+     * @expectedException TypeError
      */
     public function testStrRandomFailure($length)
     {
-        $this->setExpectedException(\RuntimeException::class);
-
         $string = str_random($length);
     }
 }

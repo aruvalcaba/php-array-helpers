@@ -2,7 +2,10 @@
 
 namespace BlackLabel;
 
-class ArrayPullTest extends \PHPUnit_Framework_TestCase
+/**
+ * @author Alan Ruvalcaba <aruval3@gmail.com>
+ */
+class ArrayPullTest extends TestCase
 {
     public function arrayPullDataProvider()
     {
@@ -43,11 +46,10 @@ class ArrayPullTest extends \PHPUnit_Framework_TestCase
     
     /**
      * @dataProvider arrayPullTypeErrorProvider
+     * @expectedException TypeError
      */
     public function testArrayPullNullOrigin($origin,$keys)
     {
-        $this->setExpectedException(\TypeError::class);
-
         $pulledArray = array_pull($origin,$keys);
     }
 }

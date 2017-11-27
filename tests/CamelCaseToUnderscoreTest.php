@@ -3,11 +3,9 @@
 namespace BlackLabel;
 
 /**
- * Description of CamelCaseToUnderscoreTest
- *
- * @author Alan Ruvalcaba <alan@worldnet-intl.com>
+ * @author Alan Ruvalcaba <aruval3@gmail.com>
  */
-class CamelCaseToUnderscoreTest extends \PHPUnit_Framework_TestCase
+class CamelCaseToUnderscoreTest extends TestCase
 {
     function camelCaseToUnderscoreSuccess()
     {
