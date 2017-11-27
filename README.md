@@ -6,7 +6,7 @@ Extension of helper functions for php.
 composer require black-label\php-helpers
 ```
 
-## Basic Uage
+## Basic Usage
 
 ```php
 <?php
